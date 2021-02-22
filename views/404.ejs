@@ -1,0 +1,19 @@
+<html lang="en">
+	<%- include('./partials/head.ejs'); %>
+	<body>
+		<div class="container center">
+			<img src="/404.png" class="img-fluid" alt="Page not found" />
+			<h3>OOPS!!</h3>
+			<p>The page you were looking for was not found :(</p>
+			<button
+				onclick="console.log(window.location.href='/')"
+				type="button"
+				class="btn red"
+			>
+				Go back to homepage
+			</button>
+		</div>
+
+		<%- include('./partials/footer.ejs') %>
+	</body>
+</html>

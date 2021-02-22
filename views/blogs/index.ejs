@@ -1,0 +1,36 @@
+<html lang="en">
+	<%- include('../partials/head.ejs'); %>
+	<body>
+		<%- include('../partials/nav.ejs'); %>
+
+		<div class="container-fluid mt-5">
+			<div class="row">
+				<% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+				<div class="col s12 m4">
+					<div class="card blue hoverable">
+						<div class="card-content white-text">
+							<span class="card-title"><%= blog.title %> </span>
+							<p><%= blog.snippet %></p>
+							<div class="" style="margin-top: 10px">
+								<p>Created at: <%= blog.createdAt.toLocaleDateString() %></p>
+							</div>
+							<div style="margin-top: 3px">
+								<p><%= blog.author %></p>
+							</div>
+						</div>
+						<div class="card-action">
+							<a href="/blogs/<%= blog._id %>" class="btn red"
+								>Read more<i class="material-icons right">send</i></a
+							>
+						</div>
+					</div>
+				</div>
+				<% }) %> <% } else { %>
+				<p>There are no blogs to display</p>
+				<% } %>
+			</div>
+		</div>
+		<div class="container"></div>
+		<%- include('../partials/footer.ejs') %>
+	</body>
+</html>
